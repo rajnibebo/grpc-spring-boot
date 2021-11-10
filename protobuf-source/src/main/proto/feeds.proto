@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package com.rajni.feeds.proto;
+
+option java_multiple_files = true;
+option java_package = "com.rajni.feeds.proto";
+
+message Feed {
+    string response = 1;
+    int32 count = 2;
+}
+
+message FeedRequest {
+    string query = 1;
+}
+
+message FeedResponse {
+    repeated string response = 1;
+}
+
+service FeedService {
+    rpc FeedTransform(FeedRequest) returns (FeedResponse) {};
+}
